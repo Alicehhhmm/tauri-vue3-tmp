@@ -31,6 +31,7 @@ export const useWindow = () => {
             // url: 'http://localhost:5173/', // successfully
             // url: './plot-window.html', // invalid
             // url: '/', // successfully
+            url: '/exp',
             resizable: resizable,
             width: width,
             height: height,
@@ -40,15 +41,8 @@ export const useWindow = () => {
             fullscreen: false,
             skipTaskbar: false,
             decorations: false,
-            transparent: true,
+            transparent: true, //! invalid
             dragDropEnabled: true
-        })
-
-
-        await webview.listen('tauri://created', async (e) => {
-            const webviewT = webview
-            console.log('tauri://created', e);
-            console.log('webviewT', webviewT);
         })
 
         await webview.once('tauri://error', async (e) => {
