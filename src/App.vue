@@ -26,7 +26,7 @@ function handleCommand() {
     console.log('On click handlerCommand Fn: ' , count.value);
 }
 
-const { createWebviewWindow, checkWinExist } = useWindow()
+const { createWebviewWindow } = useWindow()
 async function handleCreate() {
     console.log('On click handleCreate Fn1: ' , );
     // const wind = await createWebviewWindow('设置', 'my-label', 840, 840)
@@ -35,7 +35,6 @@ async function handleCreate() {
     const wind = await createWebviewWindow('设置', 'crwind',440, 340)
     setTimeout(async () => {
             console.log('On click handleCreate Fn: ' , wind);
-        
     }, 300);
 
 }
