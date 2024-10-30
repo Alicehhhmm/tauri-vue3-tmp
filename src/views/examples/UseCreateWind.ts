@@ -29,7 +29,7 @@ export const useWindow = () => {
             // url: 'tauri://localhost/',
             // url: 'http://tauri.localhost/',
             // url: 'http://localhost:5173/', // successfully
-            // url: './plot-window.html', // successfully
+            // url: './plot-window.html', // invalid
             // url: '/', // successfully
             resizable: resizable,
             width: width,
@@ -39,8 +39,8 @@ export const useWindow = () => {
             center: true,
             fullscreen: false,
             skipTaskbar: false,
-            decorations: true,
-            transparent: false,
+            decorations: false,
+            transparent: true,
             dragDropEnabled: true
         })
 
