@@ -32,7 +32,7 @@ async function handleCreate() {
     // const wind = await createWebviewWindow('设置', 'my-label', 840, 840)
     // const wind = await createWebviewWindow('设置', 'plot-window',440, 340)
     // const wind = await createWebviewWindow('设置', 'main-two', 240, 140)
-    const wind = await createWebviewWindow('设置', 'crwind', 440, 340)
+    const wind = await createWebviewWindow('new windows/crwind', 'crwind', 600, 400)
     setTimeout(async () => {
         console.log('On click handleCreate Fn: ', wind);
     }, 300);
@@ -49,37 +49,44 @@ onMounted(() => {
 <template>
     <div class="container-exp">
         <nav>
-        <button class="m-r">
-            <RouterLink to="/">Go to Home</RouterLink>
-        </button>
-    </nav>
-    <br>
-    <button class="m-r" @click="handleCommand">handleCommand {{ count }}</button>
-    <button class="m-r" @click="handleCreate">create wind</button>
-    <br>
+            <button class="m-r">
+                <RouterLink to="/">Go to Home</RouterLink>
+            </button>
+        </nav>
+        <br>
+        <button class="m-r" @click="handleCommand">handleCommand {{ count }}</button>
+        <br>
+        <button class="m-r" @click="handleCreate">create wind</button>
+        <br>
     </div>
-    
+
 </template>
 
 <style lang="scss" scoped>
-.container-exp{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    text-align: center;
+.container-exp {
+    width: 100%;
     padding: 20px;
+    border-radius: 18px;
+    background-color: green;
+    background-image: linear-gradient(to bottom, #edf2f9, #fff);
+    border: 1px solid #e1e0e0;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
     border-radius: 8px;
-    background-color: #F2F2F2;
-    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+
     nav {
-        width: 100vw;
-        padding: 10px 0;
         background-color: #232425;
+        margin: 10px;
+        padding: 10px 0;
+        border-radius: 8px;
         position: fixed;
         top: 0;
         left: 0;
         right: 0;
+
     }
 }
 </style>
