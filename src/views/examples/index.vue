@@ -47,7 +47,8 @@ onMounted(() => {
 </script>
 
 <template>
-    <nav>
+    <div class="container-exp">
+        <nav>
         <button class="m-r">
             <RouterLink to="/">Go to Home</RouterLink>
         </button>
@@ -56,6 +57,29 @@ onMounted(() => {
     <button class="m-r" @click="handleCommand">handleCommand {{ count }}</button>
     <button class="m-r" @click="handleCreate">create wind</button>
     <br>
+    </div>
+    
 </template>
 
-<style scoped></style>
+<style lang="scss" scoped>
+.container-exp{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    text-align: center;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #F2F2F2;
+    
+    nav {
+        width: 100vw;
+        padding: 10px 0;
+        background-color: #232425;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+}
+</style>
