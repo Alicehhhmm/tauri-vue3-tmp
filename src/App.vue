@@ -4,6 +4,8 @@ import HelloWorld from './components/HelloWorld.vue'
 // When using the Tauri API npm package:
 import { invoke } from '@tauri-apps/api/core';
 
+import { useWindow } from "./examples/UseCreateWind";
+
  // Invoke the command
  async function useCommand() {
     let res = await  invoke('my_custom_command1');
@@ -24,6 +26,20 @@ function handleCommand() {
     console.log('On click handlerCommand Fn: ' , count.value);
 }
 
+const { createWebviewWindow, checkWinExist } = useWindow()
+async function handleCreate() {
+    console.log('On click handleCreate Fn1: ' , );
+    // const wind = await createWebviewWindow('设置', 'my-label', 840, 840)
+    // const wind = await createWebviewWindow('设置', 'plot-window',440, 340)
+    // const wind = await createWebviewWindow('设置', 'main-two', 240, 140)
+    const wind = await createWebviewWindow('设置', 'crwind',440, 340)
+    setTimeout(async () => {
+            console.log('On click handleCreate Fn: ' , wind);
+        
+    }, 300);
+
+}
+
 onMounted(() => {
     useCommand()
     useCommand2()
@@ -42,6 +58,7 @@ onMounted(() => {
   </div>
   <br>
   <button class="btn btn-" @click="handleCommand">handleCommand {{ count }}</button>  
+  <button class="btn btn-" @click="handleCreate">create wind</button>  
   
   <br>
   <HelloWorld msg="Vite + Vue" />
